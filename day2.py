@@ -26,5 +26,21 @@
 
 # second star
 
-import nltk
+file = open('2_input.txt')
+x = list(file)
+x = [i.replace('\n', '') for i in x]
+a, b = '', ''
 
+lenx = len(x)
+for i in range(0, lenx):
+	for j in range(i + 1, lenx - 1):
+		st1 = x[i]
+		st2 = x[j]
+		leni = len(st1)
+		c = 0
+		for ii in range(0, leni):
+			if st1[ii] != st2[ii]:
+				c += 1
+		if c == 1:
+			print(st1, st2)
+		
